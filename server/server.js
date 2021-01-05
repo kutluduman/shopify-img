@@ -33,10 +33,14 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
+const registerRoute = require("./routes/register");
+const loginRoute = require("./routes/login");
 
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
+app.use("/register",registerRoute(db));
+app.use("/login",loginRoute(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -45,7 +49,7 @@ app.use(express.static("public"));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  res.send("The server is working");
 });
 
 app.listen(PORT, () => {
