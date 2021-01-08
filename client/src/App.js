@@ -1,8 +1,13 @@
 import Navbar from './components/Home/Navbar';
+import Login from './components/User/Login';
+
 
 function App() {
   return (
-    <Navbar/>
+    <div>
+      <Navbar/>
+      <Login/>
+    </div>
   );
 }
 
