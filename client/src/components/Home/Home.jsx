@@ -1,13 +1,14 @@
 import Navbar from '../Home/Navbar';
 
 
-const Login = () => {
+const Home = () => {
+
   return (
     <div>
       <Navbar/>
-      <p>Hello From Login</p>
+      <p>This is from Home</p>
     </div>
   )
 }
 
-export default Login;
+export default Home;
