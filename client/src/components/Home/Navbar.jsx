@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 
@@ -12,6 +11,14 @@ const Nav = styled.div`
   border-bottom: 1px solid black;
   background-color: #3CB371;
   padding: 0 55px;
+
+  .login-register {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+  }
 
   @media only screen and (max-width: 750px) {
     height: 51px;
@@ -30,22 +37,13 @@ const Nav = styled.div`
   }
 `;
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    backgroundColor: '#3CB371',
-    marginLeft: theme.spacing(195),    
-
-  }
-}));
-
 
 const Navbar = () => {
-  const classes = useStyles();
 
   return (
     <Nav>
       <SiteName>shopify-img</SiteName>
-      <div className={classes.button}>
+      <div className='login-register'>
       <Button>Login</Button>
       <Button>Register</Button>
       </div>
