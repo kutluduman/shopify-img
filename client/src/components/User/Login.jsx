@@ -1,13 +1,12 @@
-import Navbar from '../Home/Navbar';
-
+import Navbar from "../Home/Navbar";
 
 const Login = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <p>Hello From Login</p>
     </div>
-  )
-}
+  );
+};
 
 export default Login;

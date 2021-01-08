@@ -1,14 +1,12 @@
-import Navbar from '../Home/Navbar';
-
+import Navbar from "../Home/Navbar";
 
 const Register = () => {
-
   return (
     <div>
-      <Navbar/>
-    <p>Hello From Register</p>
+      <Navbar />
+      <p>Hello From Register</p>
     </div>
-  )
-}
+  );
+};
 
 export default Register;
