@@ -28,13 +28,11 @@ const Nav = styled.div`
 `;
 
 
-
 const Navbar = () => {
   return (
     <Nav>
-      <SiteName>shopify-img</SiteName>   
+      <SiteName>shopify-img</SiteName>
     </Nav>
-
   )
 }
 
