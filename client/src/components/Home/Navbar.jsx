@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
+import logo from '../../docs/logo.jpg';
+
 
 
 const Nav = styled.div`
@@ -19,6 +21,11 @@ const Nav = styled.div`
     align-items: center;
     height: 100%;
     width: 90%;
+  }
+
+  .logo {
+    height: 100%;
+    width: 100%;
   }
 
   @media only screen and (max-width: 750px) {
@@ -43,7 +50,13 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <SiteName href='/'>shopify-img</SiteName>
+      <Button href="http://localhost:3000/">
+                  {" "}
+                  <img src={logo} className="logo" alt="logo"></img>{" "}
+      </Button>
+      <Button href="http://localhost:3000/">
+      <SiteName>shopify.img</SiteName>
+      </Button>
         <div className='login-register'>
           <Button href='/login'>Login</Button>
           <Button href='/register'>Register</Button>
