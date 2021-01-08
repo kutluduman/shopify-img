@@ -33,6 +33,8 @@ const Nav = styled.div`
 const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: '#3CB371',
+    marginLeft: theme.spacing(195),    
+
   }
 }));
 
@@ -43,9 +45,12 @@ const Navbar = () => {
   return (
     <Nav>
       <SiteName>shopify-img</SiteName>
-      <Button color={classes.button}>Login</Button>
-      <Button color={classes.button}>Register</Button>
+      <div className={classes.button}>
+      <Button>Login</Button>
+      <Button>Register</Button>
+      </div>
     </Nav>
+
   )
 }
 
