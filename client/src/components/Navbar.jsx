@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 
 const Nav = styled.div`
   display: flex;
@@ -27,11 +30,21 @@ const Nav = styled.div`
   }
 `;
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    backgroundColor: '#3CB371',
+  }
+}));
+
 
 const Navbar = () => {
+  const classes = useStyles();
+
   return (
     <Nav>
       <SiteName>shopify-img</SiteName>
+      <Button color={classes.button}>Login</Button>
+      <Button color={classes.button}>Register</Button>
     </Nav>
   )
 }
