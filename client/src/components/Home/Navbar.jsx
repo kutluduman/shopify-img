@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 
 
-
-
-
 const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -46,13 +43,12 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <SiteName>shopify-img</SiteName>
+      <SiteName href='/'>shopify-img</SiteName>
         <div className='login-register'>
-          <Button>Login</Button>
-          <Button>Register</Button>
+          <Button href='/login'>Login</Button>
+          <Button href='/register'>Register</Button>
         </div>
     </Nav>
-      
   )
 }
 
