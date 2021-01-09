@@ -3,7 +3,7 @@ import Navbar from "../Home/Navbar";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import { TextField } from "@material-ui/core";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 
 const PageContainer = styled.div`
   position: fixed;
@@ -38,16 +38,15 @@ const PageContainer = styled.div`
   button {
     width: 100px;
     height: auto;
+    background-color: #3cb371 !important;
   }
-  
 `;
 
 const Register = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
@@ -101,12 +100,12 @@ const Register = () => {
             size="medium"
             fullfullWidth={true}
           />
-          <Button 
-          className="button"
-          fullWidth 
-          variant="contained" 
-          color="primary" 
-          type="submit">
+          <Button
+            className="button"
+            fullWidth
+            variant="contained"
+            type="submit"
+          >
             REGISTER
           </Button>
         </form>

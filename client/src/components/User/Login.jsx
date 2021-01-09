@@ -39,6 +39,7 @@ const PageContainer = styled.section`
   button {
     width: 100px;
     height: auto;
+    background-color: #3cb371 !important;
   }
 
   div.signup-instead-wrapper {
@@ -48,12 +49,19 @@ const PageContainer = styled.section`
     text-align: center;
     align-items: center;
     font-size: 0.8em;
-    color: #576D5C;
+    color: #576d5c;
     margin-top: 1em;
   }
   div.signup-instead-wrapper button {
     margin-top: -6px;
-    font-size: 0.8em;
+    font-size: 1.8em;
+    width: 100px;
+    height: auto;
+  }
+
+  .link {
+    color: black;
+    font-size: 20px;
   }
 `;
 
@@ -93,24 +101,21 @@ const Login = () => {
             size="medium"
             fullfullWidth={true}
           />
-          <Button 
-          className=""
-          fullWidth 
-          variant="contained" 
-          color="primary" 
-          type="submit">
+          <Button
+            className="button"
+            fullWidth
+            variant="contained"
+            type="submit"
+          >
             LOGIN
           </Button>
         </form>
         <div className="signup-instead-wrapper">
-        <p>Don't have an account?</p>
-        <Button 
-        size="medium" 
-        variant="outlined" 
-        color="primary" 
-        >Signup!
-        </Button>
-      </div>
+          <p className="paragraph">Don't have an account?</p>
+          <a className="link" href="/register">
+            Signup!
+          </a>
+        </div>
       </PageContainer>
     </div>
   );
