@@ -28,12 +28,17 @@ const PageContainer = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 2em;
-    margin-left: 50em;
-    width: 25em;
+    text-align: center;
+    align-items: center;
+    margin-top: 1em;
   }
   form.form .MuiFormControl-root {
     margin-bottom: 1em;
+  }
+
+  button {
+    width: 100px;
+    height: auto;
   }
 
   div.signup-instead-wrapper {
@@ -88,7 +93,12 @@ const Login = () => {
             size="medium"
             fullfullWidth={true}
           />
-          <Button fullWidth variant="contained" color="primary" type="submit">
+          <Button 
+          className=""
+          fullWidth 
+          variant="contained" 
+          color="primary" 
+          type="submit">
             LOGIN
           </Button>
         </form>

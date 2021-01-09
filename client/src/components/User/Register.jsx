@@ -28,12 +28,16 @@ const PageContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 2em;
-    margin-left: 50em;
-    width: 25em;
+    text-align: center;
+    align-items: center;
   }
   form.form .MuiFormControl-root {
     margin-bottom: 1em;
+  }
+
+  button {
+    width: 100px;
+    height: auto;
   }
   
 `;
@@ -97,7 +101,12 @@ const Register = () => {
             size="medium"
             fullfullWidth={true}
           />
-          <Button fullWidth variant="contained" color="primary" type="submit">
+          <Button 
+          className="button"
+          fullWidth 
+          variant="contained" 
+          color="primary" 
+          type="submit">
             REGISTER
           </Button>
         </form>
