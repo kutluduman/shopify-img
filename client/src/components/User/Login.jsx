@@ -121,50 +121,54 @@ const Login = (props) => {
     setPassword(e.target.value);
   };
 
-  return (
-    <div>
-      <Navbar />
-      <PageContainer>
-        <Fade top>
-          <h2 className="form-title">Login</h2>
-        </Fade>
-        <form className="form" onSubmit={handleSubmit}>
-          <TextField
-            required={true}
-            onChange={handleChangeEmail}
-            label="Email"
-            value={email}
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <TextField
-            type="password"
-            onChange={handleChangePassword}
-            label="Password"
-            value={password}
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <Button
-            className="button"
-            fullWidth
-            variant="contained"
-            type="submit"
-          >
-            LOGIN
-          </Button>
-        </form>
-        <div className="signup-instead-wrapper">
-          <p className="paragraph">Don't have an account?</p>
-          <a className="link" href="/register">
-            Signup!
-          </a>
-        </div>
-      </PageContainer>
-    </div>
-  );
+  if (!redirect) {
+    return (
+      <div>
+        <Navbar />
+        <PageContainer>
+          <Fade top>
+            <h2 className="form-title">Login</h2>
+          </Fade>
+          <form className="form" onSubmit={handleSubmit}>
+            <TextField
+              required={true}
+              onChange={handleChangeEmail}
+              label="Email"
+              value={email}
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <TextField
+              type="password"
+              onChange={handleChangePassword}
+              label="Password"
+              value={password}
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <Button
+              className="button"
+              fullWidth
+              variant="contained"
+              type="submit"
+            >
+              LOGIN
+            </Button>
+          </form>
+          <div className="signup-instead-wrapper">
+            <p className="paragraph">Don't have an account?</p>
+            <a className="link" href="/register">
+              Signup!
+            </a>
+          </div>
+        </PageContainer>
+      </div>
+    );
+  } else {
+    return <Redirect to={{ pathname: "/" }} />;
+  }
 };
 
 export default Login;

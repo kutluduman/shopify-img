@@ -117,62 +117,61 @@ const Register = (props) => {
     setPassword(e.target.value);
   };
 
-
   if (!redirect) {
-  return (
-    <div>
-      <Navbar />
-      <PageContainer>
-        <Fade top>
-          <h2 className="form-title">Register</h2>
-        </Fade>
-        <form className="form" onSubmit={handleSubmit}>
-          <TextField
-            required={true}
-            onChange={handleChangeFirstName}
-            label="First Name"
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <TextField
-            onChange={handleChangeLastName}
-            label="Last Name"
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <TextField
-            required={true}
-            onChange={handleChangeEmail}
-            label="Email"
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <TextField
-            required={true}
-            type="password"
-            onChange={handleChangePassword}
-            label="Password"
-            variant="filled"
-            size="medium"
-            fullfullWidth={true}
-          />
-          <Button
-            className="button"
-            fullWidth
-            variant="contained"
-            type="submit"
-          >
-            REGISTER
-          </Button>
-        </form>
-      </PageContainer>
-    </div>
-  );
-} else {
-  return <Redirect to={{ pathname: "/" }} />;
+    return (
+      <div>
+        <Navbar />
+        <PageContainer>
+          <Fade top>
+            <h2 className="form-title">Register</h2>
+          </Fade>
+          <form className="form" onSubmit={handleSubmit}>
+            <TextField
+              required={true}
+              onChange={handleChangeFirstName}
+              label="First Name"
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <TextField
+              onChange={handleChangeLastName}
+              label="Last Name"
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <TextField
+              required={true}
+              onChange={handleChangeEmail}
+              label="Email"
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <TextField
+              required={true}
+              type="password"
+              onChange={handleChangePassword}
+              label="Password"
+              variant="filled"
+              size="medium"
+              fullfullWidth={true}
+            />
+            <Button
+              className="button"
+              fullWidth
+              variant="contained"
+              type="submit"
+            >
+              REGISTER
+            </Button>
+          </form>
+        </PageContainer>
+      </div>
+    );
+  } else {
+    return <Redirect to={{ pathname: "/" }} />;
   }
 };
 
