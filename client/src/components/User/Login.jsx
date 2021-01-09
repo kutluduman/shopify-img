@@ -65,6 +65,12 @@ const PageContainer = styled.section`
     color: black;
     font-size: 20px;
   }
+
+  .form.error-message {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 `;
 
 const Login = (props) => {
@@ -130,6 +136,7 @@ const Login = (props) => {
             <h2 className="form-title">Login</h2>
           </Fade>
           <form className="form" onSubmit={handleSubmit}>
+            <div className="error-message">{error && <p>{error}</p>}</div>
             <TextField
               required={true}
               onChange={handleChangeEmail}
