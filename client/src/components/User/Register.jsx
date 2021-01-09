@@ -117,6 +117,8 @@ const Register = (props) => {
     setPassword(e.target.value);
   };
 
+
+  if (!redirect) {
   return (
     <div>
       <Navbar />
@@ -169,6 +171,9 @@ const Register = (props) => {
       </PageContainer>
     </div>
   );
+} else {
+  return <Redirect to={{ pathname: "/" }} />;
+  }
 };
 
 export default Register;
