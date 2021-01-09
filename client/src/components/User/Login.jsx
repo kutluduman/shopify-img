@@ -54,7 +54,7 @@ const PageContainer = styled.section`
 
 const Login = () => {
   const [stateLogin, setStateLogin] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -69,10 +69,10 @@ const Login = () => {
           <TextField
             required={true}
             onChange={(event) =>
-              setStateLogin({ ...stateLogin, username: event.target.value })
+              setStateLogin({ ...stateLogin, email: event.target.value })
             }
             label="Email"
-            value={stateLogin.username}
+            value={stateLogin.email}
             variant="filled"
             size="medium"
             fullfullWidth={true}
