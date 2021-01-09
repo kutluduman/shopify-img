@@ -3,7 +3,7 @@ import Navbar from "../Home/Navbar";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import { TextField } from "@material-ui/core";
-import { Button } from '@material-ui/core';
+import { Button } from "@material-ui/core";
 
 const PageContainer = styled.section`
   position: fixed;
@@ -35,10 +35,25 @@ const PageContainer = styled.section`
   form.form .MuiFormControl-root {
     margin-bottom: 1em;
   }
+
+  div.signup-instead-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #576D5C;
+    margin-top: 1em;
+  }
+  div.signup-instead-wrapper button {
+    margin-top: -6px;
+    font-size: 0.8em;
+  }
 `;
 
 const Login = () => {
-  const [login, setLogin] = useState({
+  const [stateLogin, setStateLogin] = useState({
     username: "",
     password: "",
   });
@@ -54,10 +69,10 @@ const Login = () => {
           <TextField
             required={true}
             onChange={(event) =>
-              setLogin({ ...login, username: event.target.value })
+              setStateLogin({ ...stateLogin, username: event.target.value })
             }
-            label="Username"
-            value={login.username}
+            label="Email"
+            value={stateLogin.username}
             variant="filled"
             size="medium"
             fullfullWidth={true}
@@ -65,23 +80,27 @@ const Login = () => {
           <TextField
             type="password"
             onChange={(event) =>
-              setLogin({ ...login, password: event.target.value })
+              setStateLogin({ ...stateLogin, password: event.target.value })
             }
             label="Password"
-            value={login.password}
+            value={stateLogin.password}
             variant="filled"
             size="medium"
             fullfullWidth={true}
           />
-          <Button 
-          fullWidth 
-          variant="contained" 
-          color= "primary" 
-          type="submit" 
-          >
+          <Button fullWidth variant="contained" color="primary" type="submit">
             LOGIN
-            </Button>
+          </Button>
         </form>
+        <div className="signup-instead-wrapper">
+        <p>Don't have an account?</p>
+        <Button 
+        size="medium" 
+        variant="outlined" 
+        color="primary" 
+        >Signup!
+        </Button>
+      </div>
       </PageContainer>
     </div>
   );
