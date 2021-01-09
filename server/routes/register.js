@@ -10,12 +10,6 @@ module.exports = (db) => {
     const email = req.body.email;
     const password = bcrypt.hashSync(user.password, 10);
 
-    console.log('user', user);
-    console.log('first_name', first_name);
-    console.log('last_name', last_name);
-    console.log('email', email);
-    console.log('password', password);
-
     return db
       .query(
         `
