@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 const PageContainer = styled.section`
   position: fixed;
@@ -65,11 +67,59 @@ const PageContainer = styled.section`
   }
 `;
 
-const Login = () => {
-  const [stateLogin, setStateLogin] = useState({
-    email: "",
-    password: "",
-  });
+const Login = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
+  const [error, setError] = useState("");
+
+  const user = {
+    email,
+    password,
+  };
+
+  const validate = () => {
+    if (!email) {
+      setError("Email is required!");
+      return;
+    }
+    if (!password) {
+      setError("Password is required!");
+      return;
+    }
+
+    const user = {
+      email,
+      password,
+    };
+
+    axios
+      .post(`http://localhost:8080/login`, { user })
+      .then((res) => {
+        if (res.status === 200) {
+          props.setCookie("name", user.email, { path: "/" });
+          setRedirect(true);
+        }
+      })
+      .catch((err) => {
+        setError("Incorrect Email or Password!");
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    validate();
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  }
 
   return (
     <div>
@@ -78,25 +128,21 @@ const Login = () => {
         <Fade top>
           <h2 className="form-title">Login</h2>
         </Fade>
-        <form className="form" onSubmit={(e) => e.preventDefault()}>
+        <form className="form" onSubmit={handleSubmit}>
           <TextField
             required={true}
-            onChange={(event) =>
-              setStateLogin({ ...stateLogin, email: event.target.value })
-            }
+            onChange={handleChangeEmail}
             label="Email"
-            value={stateLogin.email}
+            value={email}
             variant="filled"
             size="medium"
             fullfullWidth={true}
           />
           <TextField
             type="password"
-            onChange={(event) =>
-              setStateLogin({ ...stateLogin, password: event.target.value })
-            }
+            onChange={handleChangePassword}
             label="Password"
-            value={stateLogin.password}
+            value={password}
             variant="filled"
             size="medium"
             fullfullWidth={true}
