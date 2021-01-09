@@ -14,10 +14,10 @@ function App() {
         <Home cookies={cookies} setCookie={setCookie} removeCookie={removeCookie}  />
       </Route>
       <Route exact path="/login">
-        <Login />
+        <Login cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
       </Route>
       <Route exact path="/register">
-        <Register />
+        <Register cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
       </Route>
     </Router>
   );

@@ -94,7 +94,7 @@ const Login = (props) => {
     };
 
     axios
-      .post("http://localhost:8080/login", { user })
+      .post(`http://localhost:8080/login`, { user })
       .then((res) => {
         if (res.status === 200) {
           props.setCookie("name", user.email, { path: "/" });
@@ -115,11 +115,11 @@ const Login = (props) => {
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
-  }
+  };
 
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
-  }
+  };
 
   return (
     <div>
