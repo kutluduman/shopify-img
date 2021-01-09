@@ -127,14 +127,14 @@ const Register = (props) => {
         <form className="form" onSubmit={handleSubmit}>
           <TextField
             required={true}
-            onChange={{ handleChangeFirstName }}
+            onChange={ handleChangeFirstName }
             label="First Name"
             variant="filled"
             size="medium"
             fullfullWidth={true}
           />
           <TextField
-            onChange={{ handleChangeLastName }}
+            onChange={ handleChangeLastName }
             label="Last Name"
             variant="filled"
             size="medium"
@@ -142,7 +142,7 @@ const Register = (props) => {
           />
           <TextField
             required={true}
-            onChange={{ handleChangeEmail }}
+            onChange={ handleChangeEmail }
             label="Email"
             variant="filled"
             size="medium"
@@ -151,7 +151,7 @@ const Register = (props) => {
           <TextField
             required={true}
             type="password"
-            onChange={{ handleChangePassword }}
+            onChange={ handleChangePassword }
             label="Password"
             variant="filled"
             size="medium"
