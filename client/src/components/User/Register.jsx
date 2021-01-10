@@ -42,6 +42,12 @@ const PageContainer = styled.div`
     height: auto;
     background-color: #3cb371 !important;
   }
+
+  .form.error-message {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 `;
 
 const Register = (props) => {
@@ -126,6 +132,7 @@ const Register = (props) => {
             <h2 className="form-title">Register</h2>
           </Fade>
           <form className="form" onSubmit={handleSubmit}>
+            <div className="error-message">{error && <p>{error}</p>}</div>
             <TextField
               required={true}
               onChange={handleChangeFirstName}
