@@ -130,7 +130,6 @@ const Login = (props) => {
   if (!redirect) {
     return (
       <div>
-        <Navbar />
         <PageContainer>
           <Fade top>
             <h2 className="form-title">Login</h2>
