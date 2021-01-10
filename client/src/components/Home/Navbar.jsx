@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import logo from "../../docs/logo.jpg";
-import {Redirect} from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 const Nav = styled.div`
   display: flex;
@@ -44,47 +44,53 @@ const SiteName = styled.p`
   }
 `;
 
-const Navbar = (props) => {
+const UserLogged = styled.h2`
+  font-family: Roboto;
+  color: black;
+  font-size: 18px;
+  padding: 30px;
+`;
 
+const Navbar = (props) => {
   const handleRemoveCookie = () => {
     props.removeCookie("name");
   };
 
   if (!props.cookies.name) {
-  return (
-    <Nav>
-      <Button href="http://localhost:3000/">
-        {" "}
-        <img src={logo} className="logo" alt="logo"></img>{" "}
-      </Button>
-      <Button href="http://localhost:3000/">
-        <SiteName>shopify.img</SiteName>
-      </Button>
-      <div className="login-register">
-        <Button href="/login">Login</Button>
-        <Button href="/register">Register</Button>
-      </div>
-    </Nav>
-  );
+    return (
+      <Nav>
+        <Button href="http://localhost:3000/">
+          {" "}
+          <img src={logo} className="logo" alt="logo"></img>{" "}
+        </Button>
+        <Button href="http://localhost:3000/">
+          <SiteName>shopify.img</SiteName>
+        </Button>
+        <div className="login-register">
+          <Button href="/login">Login</Button>
+          <Button href="/register">Register</Button>
+        </div>
+      </Nav>
+    );
   } else {
     return (
       <Nav>
-      <Button href="http://localhost:3000/">
-        {" "}
-        <img src={logo} className="logo" alt="logo"></img>{" "}
-      </Button>
-      <Button href="http://localhost:3000/">
-        <SiteName>shopify.img</SiteName>
-      </Button>
-      <div className="login-register">
-      <h2> Logged in as {props.cookies.name}!</h2>
-        <Button onClick={handleRemoveCookie} href="/">Logout</Button>
-      </div>
-    </Nav>
-    )
+        <Button href="http://localhost:3000/">
+          {" "}
+          <img src={logo} className="logo" alt="logo"></img>{" "}
+        </Button>
+        <Button href="http://localhost:3000/">
+          <SiteName>shopify.img</SiteName>
+        </Button>
+        <div className="login-register">
+          <UserLogged>User: {props.cookies.name}</UserLogged>
+          <Button onClick={handleRemoveCookie} href="/">
+            Logout
+          </Button>
+        </div>
+      </Nav>
+    );
   }
-  
-
 };
 
 export default Navbar;

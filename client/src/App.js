@@ -8,12 +8,13 @@ import { useCookies } from "react-cookie";
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["name"]);
 
-  console.log('cookies', cookies);
-  console.log('setCookie', setCookie);
-
   return (
     <Router>
-      <Navbar cookies={cookies} setCookie={setCookie} removeCookie={removeCookie}/>
+      <Navbar
+        cookies={cookies}
+        setCookie={setCookie}
+        removeCookie={removeCookie}
+      />
       <Route exact path="/login">
         <Login cookies={cookies} setCookie={setCookie} />
       </Route>
@@ -21,7 +22,11 @@ function App() {
         <Register cookies={cookies} setCookie={setCookie} />
       </Route>
       <Route exact path="/">
-        <Home cookies={cookies} setCookie={setCookie} removeCookie={removeCookie}  />
+        <Home
+          cookies={cookies}
+          setCookie={setCookie}
+          removeCookie={removeCookie}
+        />
       </Route>
     </Router>
   );
