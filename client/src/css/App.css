@@ -3,10 +3,12 @@
   /* or inline-flex */
   justify-content: center;
   margin-bottom: 50px;
+  margin-top: 2em;
 }
 
 .upload-container {
   width: 600px;
+  margin-bottom: 50px;
 }
 
 .gallery-container {

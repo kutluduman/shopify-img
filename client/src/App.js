@@ -23,7 +23,7 @@ function App() {
   const [images, setImages] = useState(null);
 
   const fetchUploads = useCallback(() => {
-    fetch("http://localhost:8000/api/uploads")
+    fetch("http://localhost:8000/uploads")
       .then((response) =>
         response.json().then((data) => setImages(transformUploads(data)))
       )
