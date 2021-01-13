@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "DB_USERNAME",
-    "password": "DB_PASSWORD",
-    "database": "DATABASE_NAME",
-    "host": "DATABASE_URL",
+    "DB_HOST":"localhost",
+    "DB_USER":"labber",
+    "DB_PASS":"labber",
+    "DB_NAME":"shopify",
+    "DB_PORT":5432,
     "dialect": "postgres"
   },
   "test": {
