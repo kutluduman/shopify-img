@@ -31,6 +31,7 @@ app.use(cors());
 // Note: Feel free to replace the example routes below with your own
 const registerRoute = require("./routes/register");
 const loginRoute = require("./routes/login");
+const uploadsRoute = require("./routes/uploads");
 
 
 
@@ -41,6 +42,7 @@ const loginRoute = require("./routes/login");
 // app.use("", usersRoutes(db));
 app.use("/register", registerRoute(db));
 app.use("/login", loginRoute(db));
+app.use("/uploads", uploadsRoute);
 
 
 
