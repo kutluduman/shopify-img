@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const models = require("../../server/models");
+const models = require("../../server/routes/uploads");
 const sharp = require("sharp");
 const multer = require("multer");
 const storage = multer.memoryStorage();
@@ -9,7 +9,7 @@ const { v4: uuidv4 } = require('uuid');
 const aws = require("aws-sdk");
 const s3 = new aws.S3({
   signatureVersion: 'v4',
-  region: ''
+  region: 'Canada (Central) ca-central-1'
 });
 
 const S3_BUCKET = "shopifyimg-image-uploads-storage"

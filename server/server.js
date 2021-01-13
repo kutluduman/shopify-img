@@ -26,12 +26,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cors());
+app.use("*", cors());
+app.use(express.json());
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const registerRoute = require("./routes/register");
 const loginRoute = require("./routes/login");
-const uploadsRoute = require("./routes/uploads");
+const uploadRoutes = require("./routes/uploads");
 
 
 
@@ -42,7 +44,7 @@ const uploadsRoute = require("./routes/uploads");
 // app.use("", usersRoutes(db));
 app.use("/register", registerRoute(db));
 app.use("/login", loginRoute(db));
-app.use("/uploads", uploadsRoute);
+app.use("/uploads",uploadRoutes);
 
 
 
