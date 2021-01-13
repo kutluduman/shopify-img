@@ -1,7 +1,7 @@
 import Dropzone from "react-dropzone-uploader";
 import "react-dropzone-uploader/dist/styles.css";
 
-const Uploads = ({ fetchUploads }) => {
+const Upload = ({ fetchUploads }) => {
   const getUploadParams = ({ file }) => {
     const body = new FormData();
     body.append("image", file);
@@ -32,4 +32,4 @@ const Uploads = ({ fetchUploads }) => {
   );
 };
 
-export default Uploads;
+export default Upload;
