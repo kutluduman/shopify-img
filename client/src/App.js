@@ -1,9 +1,22 @@
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
 import Navbar from "./components/Home/Navbar";
-import Home from "./components/Home/Home";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
+import Uploads from "./components/Home/Uploads";
+import Gallery from "./components/Home/Gallery";
+
+import './css/App.css'
+
 import { useCookies } from "react-cookie";
+
+const transformUploads = (uploads) => {
+  return uploads.map(u => ({
+    original: u.imageUrl,
+    thumbnail: u.thumbnailUrl
+  }));
+}
+
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["name"]);
@@ -22,11 +35,7 @@ function App() {
         <Register cookies={cookies} setCookie={setCookie} />
       </Route>
       <Route exact path="/">
-        <Home
-          cookies={cookies}
-          setCookie={setCookie}
-          removeCookie={removeCookie}
-        />
+        
       </Route>
     </Router>
   );
