@@ -47,7 +47,7 @@ function getSignedUrl(bucket, key, expires = 3600) {
 }
 
 router.get("/", async (req, res) => {
-  let uploadList = await models.uploads.findAll({
+  let uploadList = await models.user.uploads.findAll({
     include: [
       {
         model: models.images,
