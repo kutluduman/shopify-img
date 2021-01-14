@@ -9,10 +9,10 @@ const { v4: uuidv4 } = require('uuid');
 const aws = require("aws-sdk");
 const s3 = new aws.S3({
   signatureVersion: 'v4',
-  region: 'Canada (Central) ca-central-1'
+  region: 'us-east-2'
 });
 
-const S3_BUCKET = "shopifyimg-image-uploads-storage"
+const S3_BUCKET = "shopify-image-upload-storage"
 
 async function uploadToS3(key, buffer, mimetype) {
   return new Promise((resolve, reject) => {
