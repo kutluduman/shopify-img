@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const models = require("../../server/routes/uploads");
+const models = require("../../server/models");
 const sharp = require("sharp");
 const multer = require("multer");
 const storage = multer.memoryStorage();
@@ -47,7 +47,7 @@ function getSignedUrl(bucket, key, expires = 3600) {
 }
 
 router.get("/", async (req, res) => {
-  let uploadList = await models.user.uploads.findAll({
+  let uploadList = await models.uploads.findAll({
     include: [
       {
         model: models.images,
