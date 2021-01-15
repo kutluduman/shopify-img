@@ -51,6 +51,11 @@ const UserLogged = styled.h2`
   padding: 30px;
 `;
 
+const LogoutLink = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
 const Navbar = (props) => {
   const handleRemoveCookie = () => {
     props.removeCookie("name");
@@ -84,8 +89,8 @@ const Navbar = (props) => {
         </Button>
         <div className="login-register">
           <UserLogged>User: {props.cookies.name}</UserLogged>
-          <Button onClick={handleRemoveCookie} href="/">
-            Logout
+          <Button onClick={handleRemoveCookie}>
+          <LogoutLink href="/">Logout</LogoutLink>
           </Button>
         </div>
       </Nav>
