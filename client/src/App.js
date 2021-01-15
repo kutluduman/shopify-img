@@ -6,6 +6,7 @@ import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 import Upload from "./components/Home/Upload";
 import Gallery from "./components/Home/Gallery";
+import Landing from "./components/Home/Landing";
 
 import "./css/App.css";
 
@@ -34,33 +35,58 @@ function App() {
     fetchUploads();
   }, [fetchUploads]);
 
-  return (
-    <Router>
-      <Navbar
-        cookies={cookies}
-        setCookie={setCookie}
-        removeCookie={removeCookie}
-      />
-      <Route exact path="/login">
-        <Login cookies={cookies} setCookie={setCookie} />
-      </Route>
-      <Route exact path="/register">
-        <Register cookies={cookies} setCookie={setCookie} />
-      </Route>
-      <Route exact path="/">
-        <div className="container">
-          <div className="upload-container">
-            <Upload fetchUploads={fetchUploads} />
+  if (cookies.name) {
+    return (
+      <Router>
+        <Navbar
+          cookies={cookies}
+          setCookie={setCookie}
+          removeCookie={removeCookie}
+        />
+        <Route exact path="/login">
+          <Login cookies={cookies} setCookie={setCookie} />
+        </Route>
+        <Route exact path="/register">
+          <Register cookies={cookies} setCookie={setCookie} />
+        </Route>
+        <Route exact path="/">
+          <div className="container">
+            <div className="upload-container">
+              <Upload
+                fetchUploads={fetchUploads}
+                cookies={cookies}
+                setCookie={setCookie}
+              />
+            </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="gallery-container">
-            {images && images.length ? <Gallery images={images} /> : null}
+          <div className="container">
+            <div className="gallery-container">
+              {images && images.length ? <Gallery images={images} /> : null}
+            </div>
           </div>
-        </div>
-      </Route>
-    </Router>
-  );
+        </Route>
+      </Router>
+    );
+  } else {
+    return (
+      <Router>
+        <Navbar
+          cookies={cookies}
+          setCookie={setCookie}
+          removeCookie={removeCookie}
+        />
+        <Route exact path="/login">
+          <Login cookies={cookies} setCookie={setCookie} />
+        </Route>
+        <Route exact path="/register">
+          <Register cookies={cookies} setCookie={setCookie} />
+        </Route>
+        <Route exact path="/">
+          <Landing />
+        </Route>
+      </Router>
+    );
+  }
 }
 
 export default App;
