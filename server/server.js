@@ -35,18 +35,13 @@ const registerRoute = require("./routes/register");
 const loginRoute = require("./routes/login");
 const uploadRoutes = require("./routes/uploads");
 
-
-
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
 // app.use("", usersRoutes(db));
 app.use("/register", registerRoute(db));
 app.use("/login", loginRoute(db));
-app.use("/uploads",uploadRoutes);
-
-
+app.use("/uploads", uploadRoutes);
 
 // Note: mount other resources here, using the same pattern above
 

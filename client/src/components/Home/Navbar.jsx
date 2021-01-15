@@ -90,7 +90,7 @@ const Navbar = (props) => {
         <div className="login-register">
           <UserLogged>User: {props.cookies.name}</UserLogged>
           <Button onClick={handleRemoveCookie}>
-          <LogoutLink href="/">Logout</LogoutLink>
+            <LogoutLink href="/">Logout</LogoutLink>
           </Button>
         </div>
       </Nav>
