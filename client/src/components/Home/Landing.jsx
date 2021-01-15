@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Box = styled.div`
   display: flex;
@@ -77,13 +77,27 @@ const RegisterButton = styled.button`
   }
 `;
 
+const LoginLink = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
+const RegisterLink = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
 const Landing = () => {
   return (
     <Box>
       <Modal>
         <LoginText>Login or Register to upload photos</LoginText>
-        <LoginButton>Login</LoginButton>
-        <RegisterButton>Register</RegisterButton>
+        <LoginButton>
+          <LoginLink href="/login">Login</LoginLink>
+        </LoginButton>
+        <RegisterButton>
+          <RegisterLink href="/register">Register</RegisterLink>
+        </RegisterButton>
       </Modal>
     </Box>
   );
