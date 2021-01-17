@@ -17,7 +17,7 @@ const PageContainer = styled.section`
 
   width: 100%;
   height: 100%;
-  background-color: #ccd7d1;
+  background-color: #e7feee;
 
   .form-title {
     color: black;

@@ -4,7 +4,7 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3cb371;
+  background-color: #e7feee;
   height: 67em;
 `;
 
@@ -12,7 +12,7 @@ const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ccd7d1;
+  background-color: #e7feee;
   height: 40em;
   width: 50em;
   position: relative;
