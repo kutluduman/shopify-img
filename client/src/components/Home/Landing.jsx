@@ -12,7 +12,7 @@ const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e7feee;
+  background-color: #93dbb3;
   height: 40em;
   width: 50em;
   position: relative;

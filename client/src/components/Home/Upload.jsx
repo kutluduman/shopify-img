@@ -22,7 +22,7 @@ const Upload = ({ fetchUploads }) => {
         getUploadParams={getUploadParams}
         onSubmit={handleSubmit}
         accept="image/*"
-        maxFiles={1}
+        maxFiles={5}
         multiple={false}
         styles={{
           dropzone: { minHeight: 200, maxHeight: 250 },
