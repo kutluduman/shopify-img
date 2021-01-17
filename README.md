@@ -69,5 +69,8 @@ If you have any question or comment, please contact me from kutluduman@gmail.com
 !["register"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.45.19%20AM.png?raw=true)
 !["login"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.45.26%20AM.png?raw=true)
 !["landing"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.45.09%20AM.png?raw=true)
+!["upload"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.56.08%20AM.png?raw=true)
 !["Home"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.48.32%20AM.png?raw=true)
 !["gallery"](https://github.com/kutluduman/shopify-img/blob/master/docs/Screen%20Shot%202021-01-17%20at%206.49.07%20AM.png?raw=true)
+
+
